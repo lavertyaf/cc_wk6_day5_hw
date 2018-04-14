@@ -18,5 +18,11 @@ public abstract class Room {
         return guests.size();
     }
 
+    public void addAGuestToARoom(Guest guest){
+        guests.add(guest);
+    }
 
+    public ArrayList<Guest> getGuests() {
+        return guests;
+    }
 }

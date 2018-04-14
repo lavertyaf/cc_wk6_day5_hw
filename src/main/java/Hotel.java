@@ -33,5 +33,16 @@ public class Hotel {
         { this.guestList.remove(guest); }
     }
 
+    public void addAGuestToPArticularRoom(Guest guest, Room room){
+        room.addAGuestToARoom(guest);
+    }
 
+    public ArrayList<Guest> getGuestList(Room room) {
+        for (int i = 0; i < bedrooms.size(); i++) {
+            if (bedrooms.get(i) == room) {
+        return room.getGuests().get(i);
+            }
+        }
+        return null;
+    }
 }
