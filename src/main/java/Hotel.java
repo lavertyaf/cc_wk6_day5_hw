@@ -40,7 +40,7 @@ public class Hotel {
     public ArrayList<Guest> getGuestList(Room room) {
         for (int i = 0; i < bedrooms.size(); i++) {
             if (bedrooms.get(i) == room) {
-        return room.getGuests().get(i);
+        return room.getGuests();
             }
         }
         return null;

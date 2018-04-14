@@ -14,6 +14,7 @@ public class HotelTest {
     Bedroom bedroom4;
     Bedroom bedroom5;
     ArrayList<Guest> guestList;
+    ArrayList<Guest> guests;
     Guest guest1;
     Guest guest2;
     Guest guest3;
@@ -78,7 +79,8 @@ public class HotelTest {
 
     @Test
     public void canGetGetListForRoom(){
-        hotel.addAGuestToPArticularRoom(guest2, bedroom1);
-        assertEquals(guestList, hotel.getGuestList(bedroom1));
+        bedroom1.addAGuestToARoom(guest2);
+        bedroom1.addAGuestToARoom(guest3);
+        assertEquals(2, hotel.getGuestList(bedroom1).size());
     }
 }
