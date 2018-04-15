@@ -6,7 +6,7 @@ public class Hotel {
     ArrayList<Guest> guestList;
     ArrayList<Bedroom> bedrooms;
 
-    public Hotel(String name, ArrayList<Bedroom> bedrooms){
+    public Hotel(String name, ArrayList<Bedroom> bedrooms) {
         this.name = name;
         this.guestList = new ArrayList<>();
         this.bedrooms = bedrooms;
@@ -24,25 +24,29 @@ public class Hotel {
         return guestList.size();
     }
 
-    public void checkInGuest(Guest guest){
+    public void checkInGuest(Guest guest) {
         this.guestList.add(guest);
     }
 
     public void checkOutGuest(Guest guest) {
         if (guestList.size() > 0) ;
-        { this.guestList.remove(guest); }
+        {
+            this.guestList.remove(guest);
+        }
     }
 
-    public void addAGuestToPArticularRoom(Guest guest, Room room){
+    public void addAGuestToPArticularRoom(Guest guest, Room room) {
         room.addAGuestToARoom(guest);
     }
 
     public ArrayList<Guest> getGuestList(Room room) {
         for (int i = 0; i < bedrooms.size(); i++) {
             if (bedrooms.get(i) == room) {
-        return room.getGuests();
+                return room.getGuests();
             }
+            return new ArrayList<Guest>();
         }
-        return null;
+
     }
 }
+

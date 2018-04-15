@@ -83,4 +83,11 @@ public class HotelTest {
         bedroom1.addAGuestToARoom(guest3);
         assertEquals(2, hotel.getGuestList(bedroom1).size());
     }
+
+    @Test
+    public void canGetGetNamesForRoom(){
+        bedroom1.addAGuestToARoom(guest2);
+        bedroom1.addAGuestToARoom(guest3);
+        assertEquals(guestList, hotel.getGuestList(bedroom1));
+    }
 }
